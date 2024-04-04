@@ -15,10 +15,11 @@ import (
 // Required for passwords as it's grabbing the Stdin and processing. Can't use ReadPassword standalone
 func Credentials(label string) string {
 	var s string
-	fmt.Printf("%s ", label)
-	if label == "Password:" {
+	fmt.Print(label)
+	if strings.TrimSpace(label) == "Password:" {
 		bytePassword, _ := term.ReadPassword(int(syscall.Stdin))
 		s = string(bytePassword)
+		fmt.Print()
 	} else {
 		fmt.Scan(&s)
 	}
