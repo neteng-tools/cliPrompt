@@ -19,7 +19,7 @@ func Credentials(label string) string {
 	if strings.TrimSpace(label) == "Password:" {
 		bytePassword, _ := term.ReadPassword(int(syscall.Stdin))
 		s = string(bytePassword)
-		fmt.Print()
+		fmt.Println()
 	} else {
 		fmt.Scan(&s)
 	}
