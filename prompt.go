@@ -88,7 +88,5 @@ func Scan(label string) string {
 
 // This functions whole job is to allow you to stop at the end of a program and digest the output before closing. Press Enter to continue...
 func Pause() {
-	r := bufio.NewReader(os.Stdin)
-	_, _ = fmt.Fprint(os.Stderr, "\n\nPress Enter to continue...")
-	_, _ = r.ReadString('\n')
+	List("\n\nPress enter to continue...")
 }
